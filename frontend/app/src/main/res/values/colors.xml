@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- New UI Colors -->
+    <color name="ui_bg_dark">#0F1115</color>
+    <color name="ui_card_bg">#1A1D24</color>
+    <color name="sos_red">#FF3B3B</color>
+    <color name="sos_red_dim">#3D1414</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="text_gray">#9BA1A6</color>
+    <color name="status_green">#4CAF50</color>
+    <color name="accent_pink">#E94560</color>
+    <color name="alert_orange">#F97316</color>
+
+    <!-- Compatibility / Legacy Colors (mapped to new theme) -->
+    <color name="bg_dark_purple">#0F1115</color>
+    <color name="primary_white">#FFFFFF</color>
+    <color name="soft_purple">#1A1D24</color>
+    <color name="secondary_pink">#E94560</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

@@ -1,0 +1,16 @@
+# Android
+frontend/app/build/
+frontend/app/.idea/
+frontend/app/*.iml
+frontend/app/local.properties
+frontend/app/.gradle/
+
+# Python
+backend/__pycache__/
+backend/*.pyc
+backend/*.pkl
+backend/.env
+
+# General
+.DS_Store
+*.log

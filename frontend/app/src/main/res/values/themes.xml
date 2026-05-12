@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.WomenSafety" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/ui_card_bg</item>
+        <item name="colorPrimaryVariant">@color/ui_bg_dark</item>
+        <item name="colorOnPrimary">@color/text_white</item>
+        <item name="colorSecondary">@color/accent_pink</item>
+        <item name="colorOnSecondary">@color/text_white</item>
+        <item name="android:statusBarColor">@color/ui_bg_dark</item>
+        <item name="android:windowBackground">@color/ui_bg_dark</item>
+    </style>
+
+    <style name="CircleImage">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="ShapeAppearance.MaterialComponents.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerSize">8dp</item>
+    </style>
+</resources>
