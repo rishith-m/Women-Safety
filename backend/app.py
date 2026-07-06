@@ -14,11 +14,6 @@ from bson.objectid import ObjectId
 
 app = Flask(__name__)
 
-# Connect to database
-db = get_db()
-users_collection = db["users"]
-alerts_collection = db["alerts"]
-
 # Load the safety model
 try:
     with open('safety_model.pkl', 'rb') as f:
@@ -45,11 +40,12 @@ def register_user():
     }
     
     # Check if exists
-    existing = users_collection.find_one({"phone": data["phone"]})
+    db = get_db()
+    existing = db["users"].find_one({"phone": data["phone"]})
     if existing:
         return jsonify({"error": "User with this phone already exists"}), 400
         
-    result = users_collection.insert_one(user)
+    result = db["users"].insert_one(user)
     return jsonify({"message": "User registered successfully", "user_id": str(result.inserted_id)}), 201
 
 @app.route("/api/alert/trigger", methods=["POST"])
@@ -67,7 +63,7 @@ def trigger_alert():
         "status": "active"
     }
     
-    result = alerts_collection.insert_one(alert)
+    result = get_db()["alerts"].insert_one(alert)
     return jsonify({
         "message": "Alert triggered. Contacts will be notified.",
         "alert_id": str(result.inserted_id)
@@ -80,7 +76,7 @@ def update_location():
     if not data or "alert_id" not in data or "latitude" not in data or "longitude" not in data:
         return jsonify({"error": "Missing alert_id, latitude, or longitude"}), 400
         
-    alerts_collection.update_one(
+    get_db()["alerts"].update_one(
         {"_id": ObjectId(data["alert_id"])},
         {"$set": {
             "latitude": data["latitude"], 
