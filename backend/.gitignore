@@ -1,0 +1,14 @@
+# Environment
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Large binaries (not needed in repo)
+*.msi
+
+# Virtual env
+venv/
+.venv/

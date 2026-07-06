@@ -2,3 +2,6 @@ Flask
 pymongo
 python-dotenv
 werkzeug
+gunicorn
+numpy
+scikit-learn
